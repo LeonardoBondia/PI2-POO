@@ -2,19 +2,21 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastrar Aluno - Universidade Terra Nova</title>
+  <title>Cadastrar Aluno(a) - Universidade Terra Nova</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../src/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/app.css">
 </head>
 <body>
   <div class="d-flex min-vh-100">
+    <!-- Sidebar -->
     <aside class="sidebar d-flex flex-column justify-content-between p-4">
       <div>
         <div class="logo mb-4">
-          <img src="assets/logo.png" alt="Logo" height="48" class="me-2 align-middle">
+          <img src="assets/logo.png" alt="Logo" height="50" class="me-2 align-middle">
           <span>Universidade<br>Terra Nova</span>
         </div>
         <nav>
@@ -24,95 +26,164 @@
                 <i class="bi bi-person-plus"></i> Cadastrar
               </a>
               <ul class="nav flex-column ms-3">
-                <li><a class="nav-link" href="professor.html">Professor(a)</a></li>
-                <li><a class="nav-link fw-bold" href="#">Aluno</a></li>
+                <li><a class="nav-link fw-bold" href="adm.html">Administrador(a)</a></li>
+                 <li><a class="nav-link fw-bold" href="professor.html">Professor(a)</a></li>
+                <li><a class="nav-link " href="#">Aluno(a)</a></li>
               </ul>
             </li>
           </ul>
         </nav>
       </div>
-      <a href="#" class="btn btn-link text-white"><i class="bi bi-box-arrow-right"></i> Sair</a>
+      <a href="index.html" class="btn btn-link text-white"><i class="bi bi-box-arrow-right"></i> Sair</a>
     </aside>
+
+    <!-- Main -->
     <main class="flex-grow-1 p-0">
       <div class="d-flex justify-content-end align-items-center p-4">
         <span class="header-user">
           <span class="avatar"></span>
-          <span>Admin</span>
+          <button>👤 Admin</button>
         </span>
       </div>
-      <div class="container px-5">
+
+      <div class="container px-4 px-md-5">
         <div class="breadcrumb mt-2 mb-1">
-          <span class="text-secondary">Cadastrar &gt; Aluno</span>
+          <span class="text-secondary">Cadastrar &gt; Aluno(a)</span>
         </div>
-        <h2 class="mb-4 fw-bold">Aluno</h2>
-        <form id="formAluno">
-          <div class="row mb-2">
-            <div class="col-md-12 mb-2">
-              <label class="form-label">Nome *</label>
-              <input type="text" class="form-control" required>
-            </div>
+        <h2 class="mb-4 fw-bold">Aluno(a)</h2>
+
+        <!-- CENTRALIZAÇÃO -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <form id="formAluno">
+              <div class="row">
+              <div class="col-md-6 mb-6">
+                <label class="form-label" for="nomeAluno">Nome *</label>
+                <input type="text" class="form-control" id="nomeAluno" name="nome_aluno" required>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="emailAluno">Email *</label>
+                <input type="text" class="form-control" id="emailAluno" name="email_aluno" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label" for="cpfAluno">CPF *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cpfAluno"
+                    name="cpf_aluno"
+                    placeholder="000.000.000-00"
+                    inputmode="numeric" autocomplete="off"
+                    maxlength="14"
+                    pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
+                    title="Digite no formato 000.000.000-00"
+                    required
+                  >
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label" for="contatoAluno">Contato *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contatoAluno"
+                    name="contato_aluno"
+                    placeholder="(00)00000-0000"
+                    inputmode="numeric" autocomplete="off"
+                    maxlength="14"
+                    pattern="^\(\d{2}\)\d{5}-\d{4}$"
+                    title="Digite no formato (00)00000-0000"
+                    required
+                  >
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="form-label" for="cursoAluno">Curso *</label>
+                  <input type="text" class="form-control" id="cursoAluno" name="curso_aluno" required>
+                </div>
+              </div>
+
+              <div class="fw-bold mt-3 mb-2">Endereço</div>
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label class="form-label" for="cepAluno">CEP *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cepAluno"
+                    name="cep_aluno"
+                    placeholder="00000-000"
+                    inputmode="numeric" autocomplete="off"
+                    maxlength="9"
+                    pattern="^\d{5}-\d{3}$"
+                    title="Digite no formato 00000-000"
+                    required
+                  >
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label class="form-label" for="ruaAluno">Rua *</label>
+                  <input type="text" class="form-control" id="ruaAluno" name="rua_aluno" required>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                  <label class="form-label" for="ufAluno">UF *</label>
+                  <input type="text" class="form-control" id="ufAluno" name="uf_aluno" maxlength="2" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label class="form-label" for="bairroAluno">Bairro *</label>
+                  <input type="text" class="form-control" id="bairroAluno" name="bairro_aluno" required>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                  <label class="form-label" for="numeroAluno">Número</label>
+                  <input type="text" class="form-control" id="numeroAluno" name="numero_aluno">
+                </div>
+
+                <div class="col-md-5 mb-3">
+                  <label class="form-label" for="complementoAluno">Complemento</label>
+                  <input type="text" class="form-control" id="complementoAluno" name="complemento_aluno">
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end mt-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
+
           </div>
-          <div class="row mb-2">
-            <div class="col-md-3 mb-2">
-              <label class="form-label">CPF *</label>
-              <input type="text" class="form-control" maxlength="14" required>
-            </div>
-            <div class="col-md-3 mb-2">
-              <label class="form-label">Contato *</label>
-              <input type="text" class="form-control" maxlength="15" required>
-            </div>
-            <div class="col-md-3 mb-2">
-              <label class="form-label">Email *</label>
-              <input type="email" class="form-control" required>
-            </div>
-            <div class="col-md-3 mb-2">
-              <label class="form-label">Matrícula *</label>
-              <input type="text" class="form-control" required>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-6 mb-2">
-              <label class="form-label">Curso *</label>
-              <input type="text" class="form-control" required>
-            </div>
-          </div>
-          <div class="fw-bold mt-3 mb-2">Endereço</div>
-          <div class="row mb-2">
-            <div class="col-md-3 mb-2">
-              <label class="form-label">CEP *</label>
-              <input type="text" class="form-control" maxlength="9" required>
-            </div>
-            <div class="col-md-6 mb-2">
-              <label class="form-label">Rua *</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="col-md-1 mb-2">
-              <label class="form-label">UF *</label>
-              <input type="text" class="form-control" maxlength="2" required>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-md-5 mb-2">
-              <label class="form-label">Bairro *</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="col-md-2 mb-2">
-              <label class="form-label">Número</label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="col-md-5 mb-2">
-              <label class="form-label">Complemento</label>
-              <input type="text" class="form-control">
-            </div>
-          </div>
-          <div class="d-flex justify-content-end mt-4">
-            <button type="submit" class="btn btn-primary-custom">Salvar</button>
-          </div>
-        </form>
+        </div>
       </div>
     </main>
   </div>
+
+  <!-- Modal de Feedback -->
+<div id="feedbackModal" class="fb-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="fb-backdrop"></div>
+  <div class="fb-card" role="document">
+    <div class="fb-ico" id="fbIcon" aria-hidden="true">✓</div>
+    <h3 class="fb-title" id="fbTitle">Tudo certo!</h3>
+    <p class="fb-msg" id="fbMessage">Cadastro realizado com sucesso!</p>
+    <div class="fb-actions">
+      <button type="button" class="fb-btn" id="fbOk">OK</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Scripts -->
+  <script src="src/css/js/feedback.js"></script>
+  <script src="src/css/js/aluno.js"></script>
+  <script src="src/css/js/main.js"></script>
+  <script src="src/css/js/login.js"></script>
+  <script src="src/css/js/mascaras.js"></script>
 </body>
-  <script src="../src/js/main.js"></script>
-  <script src="../src/js/aluno.js"></script>
+</body>
 </html>
