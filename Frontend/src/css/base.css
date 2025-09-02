@@ -1,0 +1,91 @@
+/* ====== Reset + Base ====== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+  color: #1f2a33;
+  background: #ffffff;
+}
+
+/* ====== Paleta ====== */
+:root{
+  --teal-700:#156d70;   /* botões / destaques */
+  --teal-600:#0e8e90;   /* foco */
+  --teal-800:#096a6a;
+  --ink-900:#102027;    /* títulos */
+  --ink-700:#33434c;    /* textos */
+  --line:#9fb3ba;       /* bordas de inputs */
+  --muted:#5d6b73;      /* subtítulos/breadcrumbs */
+  --bg-sidebar:#27b8bd; /* fundo da faixa/side */
+  --white:#fff;
+}
+
+/* ====== Tipografia ====== */
+.h1, h1 { font-size: 28px; color: var(--ink-900); letter-spacing:.2px; }
+.muted { color: var(--muted); }
+.fw-800 { font-weight: 800; }
+
+/* ====== Inputs ====== */
+.form-control{
+  height: 44px;
+  border: 2px solid #6b7179;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-weight: 500;
+  color: var(--ink-700);
+}
+.form-control::placeholder{ color:#7c8a92; }
+.form-control:focus{
+  border-color: var(--teal-700);
+  box-shadow: 0 0 0 4px rgba(39,184,189,.18);
+  background-color: #fff;
+  outline: none;
+}
+
+/* ====== Botão padrão ====== */
+.btn-pill{
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  transition: filter .15s ease, transform .05s ease;
+}
+.btn-primary-custom{
+  background: var(--teal-700);
+  color: var(--white);
+  box-shadow: 0 2px 0 0 var(--teal-800);
+}
+.btn-pill:hover{ filter: brightness(1.04); }
+.btn-pill:active{ transform: translateY(1px); }
+
+/* ====== Espaçamento (mínimo) ====== */
+.container-narrow { max-width: 860px; }
+.login-shell{
+  display: grid;
+  grid-template-columns: minmax(320px, 520px) 1fr;
+  min-height: 100vh;
+  position: relative;
+}
+
+.login-left{ position: relative; z-index: 2; }
+.login-right{
+  position: relative;          
+  background-size: cover;
+  background-position: center;
+  z-index: 1;                   
+}
+.login-right::before,
+.login-right::after{
+  pointer-events: none;         
+}
+.login-rail{ position: relative; z-index: 4; }
+.login-right::before,
+.login-right::after{
+  pointer-events: none;
+}
+
+
