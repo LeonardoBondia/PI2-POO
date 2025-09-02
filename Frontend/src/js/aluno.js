@@ -1,30 +1,41 @@
-// aluno.js
-// Adicione aqui funcionalidades JS específicas para a página de cadastro de aluno.
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('formAluno');
   if (!form) return;
-  form.addEventListener('submit', async function(e) {
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const dados = {};
-    form.querySelectorAll('input, select').forEach(input => {
-      if (input.name) dados[input.name] = input.value;
+    form.querySelectorAll('input, select, textarea').forEach(el=>{
+      if (el.name) dados[el.name] = el.value.trim();
     });
+
     try {
-      const resp = await fetch('../api/cadastrar_aluno.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const resp = await fetch('../api/criar_aluno.php', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados)
       });
-      const data = await resp.json();
-      if (resp.ok && data.sucesso) {
-        alert('Aluno cadastrado com sucesso!');
-        form.reset();
+      const data = await resp.json().catch(()=> ({}));
+
+      if (resp.ok && (data.sucesso || data.success)) {
+        showFeedback({
+          type: 'success',
+          title: 'Cadastro realizado com sucesso!',
+          message: data.mensagem || 'Aluno cadastrado.',
+          onClose: () => form.reset()
+        });
       } else {
-        alert(data.erro || 'Erro ao cadastrar aluno.');
+        showFeedback({
+          type: 'error',
+          title: 'Dados inválidos. Verifique os dados digitados.',
+          message: data.erro || data.error || 'Revise os campos e tente novamente.'
+        });
       }
-    } catch (err) {
-      alert('Erro ao conectar ao servidor.');
+    } catch {
+      showFeedback({
+        type: 'error',
+        title: 'Falha de conexão',
+        message: 'Não foi possível enviar os dados. Tente novamente.'
+      });
     }
   });
 });
