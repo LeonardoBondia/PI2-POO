@@ -10,23 +10,23 @@ body{
 
 /* ====== Paleta ====== */
 :root{
-  --teal-700:#156d70;   /* botões / destaques */
-  --teal-600:#0e8e90;   /* foco */
-  --teal-800:#096a6a;
+  --teal-700:#037579;   /* botões / destaques */
+  --teal-600:#96dadb;   /* foco */
+  --teal-800:#056161;
   --ink-900:#102027;    /* títulos */
   --ink-700:#33434c;    /* textos */
   --line:#9fb3ba;       /* bordas de inputs */
   --muted:#5d6b73;      /* subtítulos/breadcrumbs */
-  --bg-sidebar:#27b8bd; /* fundo da faixa/side */
+  --bg-sidebar:#47d0d4; /* fundo da faixa/side */
   --white:#fff;
 }
 
-/* ====== Tipografia ====== */
+/* ====== Tipografia util ====== */
 .h1, h1 { font-size: 28px; color: var(--ink-900); letter-spacing:.2px; }
 .muted { color: var(--muted); }
 .fw-800 { font-weight: 800; }
 
-/* ====== Inputs ====== */
+/* ====== Inputs (aparentes) ====== */
 .form-control{
   height: 44px;
   border: 2px solid #6b7179;
@@ -43,7 +43,7 @@ body{
   outline: none;
 }
 
-/* ====== Botão padrão ====== */
+/* ====== Botão pill padrão ====== */
 .btn-pill{
   appearance: none;
   border: none;
@@ -62,8 +62,9 @@ body{
 .btn-pill:hover{ filter: brightness(1.04); }
 .btn-pill:active{ transform: translateY(1px); }
 
-/* ====== Espaçamento (mínimo) ====== */
+/* ====== Utilidades de espaçamento ====== */
 .container-narrow { max-width: 860px; }
+
 .login-shell{
   display: grid;
   grid-template-columns: minmax(320px, 520px) 1fr;
@@ -72,17 +73,21 @@ body{
 }
 
 .login-left{ position: relative; z-index: 2; }
+
 .login-right{
-  position: relative;          
+  position: relative;           
   background-size: cover;
   background-position: center;
   z-index: 1;                   
 }
+
 .login-right::before,
 .login-right::after{
   pointer-events: none;         
 }
+
 .login-rail{ position: relative; z-index: 4; }
+
 .login-right::before,
 .login-right::after{
   pointer-events: none;
