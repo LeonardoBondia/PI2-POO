@@ -29,6 +29,12 @@
 }
 
 /* ====== LOGIN LAYOUT ====== */
+
+.container-fluid.cadastro-bg {
+  display: flex;
+  min-height: 100vh;
+}
+
 .login-shell{
   min-height: 100vh;
   display: grid;
@@ -36,8 +42,8 @@
 }
 
 .login-rail{
-  background: #0e8e90; 
-  color: #fff;
+  background: #37e3e6; 
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +62,7 @@
 .login-left{
   background: var(--bg-sidebar);
   color: #fff;
-  padding: 28px;
+  padding: 50px;
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 18px;
@@ -82,15 +88,16 @@
 }
 
 .login-right{
-  position: relative;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 400px;
+  min-height: 60vh; /* garante altura mínima */
   background:
-    linear-gradient(135deg, #1e3c72 0%, #2a5298 100%),
-    url("../../assets/azul_gradiente.png") center/cover no-repeat;
+  linear-gradient(135deg, #043031 0%, #2c9191 100%),
+  
 }
 .login-right::after{
   content: "";
   position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(180deg, rgba(39,184,189,.32) 0%, rgba(39,184,189,.12) 100%);
+  background: linear-gradient(180deg, rgba(8, 229, 236, 0.32) 0%, rgba(6, 54, 56, 0.12) 100%);
   pointer-events: none; /* permite clicar através do gradiente */
 }
 
@@ -110,7 +117,7 @@
 }
 .user-chip .dot{
   width: 22px; height: 22px; border-radius: 50%;
-  background: #0e8e90;
+  background: #3de9ec;
   display: inline-block;
 }
 
