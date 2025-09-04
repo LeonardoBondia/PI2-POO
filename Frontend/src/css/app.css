@@ -48,7 +48,6 @@
   margin: 12px 0 6px; font-weight:600;
 }
 
-/* grade geral */
 .form-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -75,7 +74,7 @@
   grid-template-columns: 1fr 180px;
   gap:14px 16px;
 }
-/* ações */
+
 .actions{ display:flex; justify-content:flex-end; margin-top:22px; }
 
 /* ====== Responsivo ====== */
@@ -102,13 +101,13 @@
   pointer-events: none;
   transition: opacity .2s ease;
 }
+
 .fb-modal.show{
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-/* Fundo escuro */
 .fb-backdrop{
   position: absolute;
   inset: 0;
@@ -117,7 +116,7 @@
 
 .fb-card{
   position: relative;
-  z-index: 1;              
+  z-index: 1;             
   background: #fff;
   width: min(92vw, 420px);
   padding: 22px 20px;
@@ -129,7 +128,7 @@
 }
 
 .fb-card.error{ border: 2px solid #e55353; }
-.fb-ico{ font-size: 28px; line-height: 1; }
+.fb-icon{ font-size: 28px; line-height: 1; }
 .fb-title{ margin: 0; font-size: 1.1rem; }
 .fb-msg{ margin: 0; color: #556; }
 .fb-actions .fb-btn{
