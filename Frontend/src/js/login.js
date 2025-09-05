@@ -1,27 +1,30 @@
-// login.js
+import { API_BASE } from "./config.js";
 
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('form');
-  if (!form) return;
-  form.addEventListener('submit', async function(e) {
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formLogin");
+  if (!form) return; // impede rodar fora da página de login
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const email = form.querySelector('input[type="email"]').value;
-    const senha = form.querySelector('input[type="password"]').value;
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const senha = form.querySelector('input[type="password"]').value.trim();
+
     try {
-      const resp = await fetch('../api/login.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, senha })
+      const resp = await fetch(`${API_BASE}/login.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, senha }),
       });
-      const data = await resp.json();
-      if (resp.ok && data.sucesso) {
-        // Redireciona para dashboard ou página principal
-        window.location.href = 'index.html';
-      } else {
-        alert(data.erro || 'Usuário ou senha inválidos.');
+      const data = await resp.json().catch(() => ({}));
+
+      if (!resp.ok || data.error) {
+        alert(data.message || "Email/Senha inválida.");
+        return;
       }
+      // sucesso
+      window.location.href = "adm.html";
     } catch (err) {
-      alert('Erro ao conectar ao servidor.');
+      alert("Falha na conexão com o servidor.");
     }
   });
 });
