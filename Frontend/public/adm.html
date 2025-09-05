@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastrar Professor(a) - Universidade Terra Nova</title>
+  <title>Cadastrar Administrador(a) - Universidade Terra Nova</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
         <nav>
           <ul class="nav flex-column">
             <li class="nav-item mb-3">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="cadastro.html">
                 <i class="bi bi-person-plus "></i> Cadastrar
               </a>
               <ul class="nav flex-column ms-3">
@@ -39,10 +39,10 @@
 
     <!-- Main -->
     <main class="flex-grow-1 p-0">
-      <div class="d-flex justify-content-end align-items-center p-4">
+      <div  class="d-flex justify-content-end align-items-center p-4">
         <span class="header-user">
-          <span class="avatar"></span>
-          <button>👤 Admin</button>
+          <span  class="avatar"></span>
+          <span> 👤 Admin</span>
         </span>
       </div>
 
@@ -157,7 +157,7 @@
               </div>
 
               <div class="d-flex justify-content-end mt-3">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button  type="submit" class="btn btn-primary">Salvar</button>
               </div>
             </form>
 
@@ -168,24 +168,20 @@
   </div>
 
   <!-- Modal de Feedback -->
-<div id="feedbackModal" class="fb-modal" aria-hidden="true" role="dialog" aria-modal="true">
+<div id="feedbackModal" class="fb-modal" aria-hidden="true">
   <div class="fb-backdrop"></div>
-  <div class="fb-card" role="document">
-    <div class="fb-ico" id="fbIcon" aria-hidden="true">✓</div>
-    <h3 class="fb-title" id="fbTitle">Tudo certo!</h3>
-    <p class="fb-msg" id="fbMessage">Cadastro realizado com sucesso!</p>
-    <div class="fb-actions">
-      <button type="button" class="fb-btn" id="fbOk">OK</button>
-    </div>
+  <div class="fb-card">
+    <span id="fbIcon"></span>
+    <h2 id="fbTitle"></h2>
+    <p id="fbMessage"></p>
+    <button id="fbOk">OK</button>
   </div>
 </div>
 
-
   <!-- Scripts -->
-  <script src="src/css/js/feedback.js"></script>
-  <script src="src/css/js/adm.js"></script>
-  <script src="src/css/js/main.js"></script>
-  <script src="src/css/js/login.js"></script>
-  <script src="src/css/js/mascaras.js"></script>
+  <script src="src/js/feedback.js"></script>
+  <script type="module" src="src/js/adm.js"></script>
+  <script type="module" src="src/js/config.js"></script>
+  <script src="src/js/mascaras.js"></script>
 </body>
 </html>
