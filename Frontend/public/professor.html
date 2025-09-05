@@ -22,7 +22,7 @@
         <nav>
           <ul class="nav flex-column">
             <li class="nav-item mb-3">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="cadastro.html">
                 <i class="bi bi-person-plus"></i> Cadastrar
               </a>
               <ul class="nav flex-column ms-3">
@@ -34,7 +34,7 @@
           </ul>
         </nav>
       </div>
-      <a href="#" class="btn btn-link text-white"><i class="bi bi-box-arrow-right"></i> Sair</a>
+      <a href="index.html" class="btn btn-link text-white"><i class="bi bi-box-arrow-right"></i> Sair</a>
     </aside>
 
     <!-- Main -->
@@ -42,7 +42,7 @@
       <div class="d-flex justify-content-end align-items-center p-4">
         <span class="header-user">
           <span class="avatar"></span>
-          <button>👤 Admin</button>
+          <nav><b>👤 Admin</b></nav>
         </span>
       </div>
 
@@ -168,24 +168,22 @@
   </div>
 
   <!-- Modal de Feedback -->
-<div id="feedbackModal" class="fb-modal" aria-hidden="true" role="dialog" aria-modal="true">
+<div id="feedbackModal" class="fb-modal" aria-hidden="true">
   <div class="fb-backdrop"></div>
-  <div class="fb-card" role="document">
-    <div class="fb-ico" id="fbIcon" aria-hidden="true">✓</div>
-    <h3 class="fb-title" id="fbTitle">Tudo certo!</h3>
-    <p class="fb-msg" id="fbMessage">Cadastro realizado com sucesso!</p>
-    <div class="fb-actions">
-      <button type="button" class="fb-btn" id="fbOk">OK</button>
-    </div>
+  <div class="fb-card">
+    <span id="fbIcon"></span>
+    <h2 id="fbTitle"></h2>
+    <p id="fbMessage"></p>
+    <button id="fbOk">OK</button>
   </div>
 </div>
 
 
-  <!-- Scripts -->
-  <script type="module" src="src/css/js/feedback.js"></script>
-  <script src="src/css/js/professor.js"></script>
-  <script src="src/css/js/main.js"></script>
-  <script src="src/css/js/login.js"></script>
+  <script src="src/js/feedback.js"></script>
+  <script type="module" src="src/js/professor.js"></script>
+  <script type="module" src="src/js/config.js"></script>
+  <script src="src/js/mascaras.js"></script>
+  
   
 </body>
 </html>
