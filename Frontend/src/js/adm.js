@@ -1,62 +1,46 @@
-// src/js/adm.js
-// Requer: feedback.js (window.showFeedback)
+import { API_BASE } from "./config.js";
+import { showFeedback } from "./feedback.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('formAdm');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formAdm");
   if (!form) return;
 
-  const unmask = (v) => v.replace(/\D/g, '');
 
-  const serialize = (formEl) => {
-    const data = {};
-    formEl.querySelectorAll('input, select, textarea').forEach((el) => {
-      if (!el.name) return;
-      let val = el.value.trim();
-
-      // Campos com máscara
-      if (['cpf_adm', 'contato_adm', 'cep_adm'].includes(el.name)) {
-        val = unmask(val);
-      }
-      data[el.name] = val;
-    });
-    return data;
-  };
-
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    const payload = serialize(form);
+    const dados = {};
+    form.querySelectorAll("input, select, textarea").forEach((el) => {
+      if (el.name) dados[el.name] = el.value.trim();
+    });
 
     try {
-      const resp = await fetch('../api/criar_adm.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+      const resp = await fetch(`${API_BASE}/criar_admin.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados),
       });
-
       const data = await resp.json().catch(() => ({}));
 
-      if (resp.ok && (data.sucesso || data.success)) {
-        window.showFeedback({
-          type: 'success',
-          title: 'Cadastro realizado com sucesso!',
-          message: data.mensagem || 'Administrador(a) cadastrado(a).',
-          onClose: () => form.reset(),
+      if (!resp.ok || data.error) {
+        showFeedback({
+          type: "error",
+          title: "Erro",
+          message: data.message || "Dados inválidos. Revise os campos."
         });
-      } else {
-        window.showFeedback({
-          type: 'error',
-          title: 'Dados inválidos. Verifique os dados digitados.',
-          message: data.erro || data.error || 'Revise os campos e tente novamente.',
-        });
+        return;
       }
+
+      showFeedback({
+        type: "success",
+        title: "Tudo certo!",
+        message: "Cadastro realizado com sucesso!",
+        onClose: () => form.reset()
+      });
     } catch (err) {
-      window.showFeedback({
-        type: 'error',
-        title: 'Falha de conexão',
-        message: 'Não foi possível enviar os dados. Tente novamente.',
+      showFeedback({
+        type: "error",
+        title: "Erro",
+        message: "Falha de conexão. Tente novamente."
       });
     }
   });
