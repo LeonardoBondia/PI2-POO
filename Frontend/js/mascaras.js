@@ -44,8 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const cpfAdm      = document.getElementById("cpfAdm");
   const contatoAdm  = document.getElementById("contatoAdm");
   const cepAdm      = document.getElementById("cepAdm");
+  const senhaAdm      = document.getElementById("senhaAdm");
 
   if (cpfAdm)     aplicarMascara(cpfAdm, "###.###.###-##");
   if (contatoAdm) aplicarMascara(contatoAdm, "(##)#####-####");
   if (cepAdm)     aplicarMascara(cepAdm, "#####-###");
+  if (cepAdm)     aplicarMascara(cepAdm, "********");
 });

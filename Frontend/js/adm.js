@@ -1,25 +1,23 @@
-import { API_BASE } from "./config.js";
-import { showFeedback } from "./feedback.js";
+import { API_BASE_URL } from "./config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formAdm");
   if (!form) return;
 
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const dados = {};
-    form.querySelectorAll("input, select, textarea").forEach((el) => {
+    form.querySelectorAll("input").forEach((el) => {
       if (el.name) dados[el.name] = el.value.trim();
     });
 
     try {
-      const resp = await fetch(`${API_BASE}/criar_admin.php`, {
+      const resp = await fetch(`${API_BASE_URL}/criar_admin.php`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados),
       });
-      const data = await resp.json().catch(() => ({}));
+      const data = await resp.json();
 
       if (!resp.ok || data.error) {
         showFeedback({
