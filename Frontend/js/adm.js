@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados),
+        credentials: 'include'
       });
       const data = await resp.json();
 
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "success",
         title: "Tudo certo!",
         message: "Cadastro realizado com sucesso!",
-        onClose: () => form.reset()
+        onClose: () => window.location.href='/Frontend/login.html'
       });
     } catch (err) {
       showFeedback({

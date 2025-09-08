@@ -1,9 +1,5 @@
 import { API_BASE_URL } from "./config.js";
 
-if(localStorage.getItem('isAuth')) {
-  window.location.href = 'professor.html';
-}
-
 const urlParams = new URLSearchParams(window.location.search);
 const error = urlParams.get('error');
 
@@ -41,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       window.localStorage.setItem('isAuth', true);
-      window.location.href = "professor.html";
+      window.location.href = "dashboard.html";
     } catch (err) {
       console.log(err)
       alert("Falha na conexão com o servidor.");

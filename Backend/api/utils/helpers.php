@@ -28,19 +28,15 @@ function isAuth(){
 }
 
 function getHeaders() {
-    // Definir os headers de CORS primeiro
-    header('Access-Control-Allow-Origin: http://localhost:5500'); 
+    header('Access-Control-Allow-Origin: http://127.0.0.1:5500'); 
     header('Access-Control-Allow-Methods: POST, OPTIONS, GET');
-    
-    // Inclua todos os headers que seu front-end pode enviar
     header('Access-Control-Allow-Headers: Content-Type, Authorization'); 
     
     header('Access-Control-Allow-Credentials: true');
     header('Content-Type: application/json');
 
-    // **TRATAR A REQUISIÇÃO OPTIONS AQUI E SAIR DO SCRIPT**
     if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
         http_response_code(200);
-        exit(); // Finaliza o script imediatamente
+        exit();
     }
 }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Aluno(a) - Universidade Terra Nova</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div class="d-flex min-vh-100">
+        <aside class="sidebar">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo">
+      </div>
+
+
+      <div class="nav-container">
+        <nav>
+          <ul class="nav">
+            <li style="margin-bottom: 20px; padding-left: 25px;">
+              <i class="bi bi-house"></i>
+              <a style=" margin-left: 8px; font-size: 18px; color: white; text-decoration: none; font-weight: 600;" href="dashboard.html">
+                Dashboard</a>
+
+            </li>
+            <li
+              style="margin-bottom: 100px; display: flex; flex-direction: column; text-align: center; padding-left: 25px;">
+
+              <div style="display: flex; gap: 10px; font-size: 18px; font-weight: 600;">
+                <i class="bi bi-person-plus"></i>
+                <p>Cadastrar</p>
+              </div>
+              <ul class="nav">
+                <li><a href="professor.html">Professor(a)</a></li>
+                <li><a href="aluno.html">Aluno(a)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+
+      <button class="btn btn-link text-white logout" style="position:absolute; bottom: 10px; left: 10px; font-size: 19px; text-decoration: none;"><i
+          class="bi bi-box-arrow-right"></i> Sair</button>
+    </aside>
+
+
+        <main class="flex-grow-1 p-0">
+            <div class="d-flex justify-content-end align-items-center p-4">
+                <span class="header-user">
+                    <span class="avatar"></span>
+                    <nav><b>👤 Admin</b></nav>
+                </span>
+            </div>
+
+            <div class="main-dashboard">
+                <div class="dashboard-title">
+                    <p style="color: var(--ink-900); font-size: 22px;">Bem vindo(a) ao sistema de cadastramento da</p>
+                    <h1 style="color: var(--teal-800); font-weight: 600; font-size: 50px;">Universidade Terra Nova</h1>
+                </div>
+
+                <div class="dashboard-text">
+                    <p style="font-size: 20px; color: var(--ink-900);">
+                        Este sistema é usado exclusivamente para fazer o cadastro de professores e alunos da
+                        universidade.
+                        <br>Através dele, a equipe administrativa pode adicionar novos membros à comunidade acadêmica,
+                        <br>garantindo que todos os registros estejam sempre atualizados e organizados. <br>
+
+                        <br>Nossa plataforma oferece ferramentas intuitivas para que você possa focar no que realmente
+                        importa: <br>a comunidade acadêmica.
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="secondary-text-container">
+                    <div>
+                        <h3 style="font-weight: 600;">Cadastro simplificado</h3>
+                        <p style="font-size: 20px; color: var(--ink-900)"> Adicione novos membros à comunidade acadêmica em poucos minutos.
+                            <br>Nosso sistema guia você por um processo rápido e intuitivo, sem complicações.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="font-weight: 600;">Segurança e Confiabilidade</h3>
+                        <p style="font-size: 20px; color: var(--ink-900)">
+                            Todos os dados estão protegidos. Utilizamos as mais recentes tecnologias de segurança
+                            <br>para garantir que todas as informações de professores e alunos estejam seguras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </main>
+    </div>
+
+    <div id="feedbackModal" class="fb-modal" aria-hidden="true">
+        <div class="fb-backdrop"></div>
+        <div class="fb-card">
+            <span id="fbIcon"></span>
+            <h2 id="fbTitle"></h2>
+            <p id="fbMessage"></p>
+            <button id="fbOk">OK</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/logout.js"></script>
+    <script src="js/feedback.js"></script>
+    <script type="module" src="js/config.js"></script>
+</body>
+</body>
+
+</html>

@@ -8,16 +8,16 @@ body{
   background: #ffffff;
 }
 
-/* ====== Paleta ====== */
+
 :root{
-  --teal-700:#037579;   /* botões / destaques */
-  --teal-600:#96dadb;   /* foco */
+  --teal-700:#037579;
+  --teal-600:#96dadb;
   --teal-800:#056161;
-  --ink-900:#102027;    /* títulos */
-  --ink-700:#33434c;    /* textos */
-  --line:#9fb3ba;       /* bordas de inputs */
-  --muted:#5d6b73;      /* subtítulos/breadcrumbs */
-  --bg-sidebar:#47d0d4; /* fundo da faixa/side */
+  --ink-900:#102027;
+  --ink-700:#33434c;
+  --line:#9fb3ba;
+  --muted:#5d6b73;
+  --bg-sidebar:#47d0d4;
   --white:#fff;
 }
 
