@@ -6,6 +6,11 @@
 
 # PROJETO INTEGRADOR: PROVA DE CONCEITO (POC) – SISTEMA DE CADASTRO UNIVERSITÁRIO   
 
+Membros do grupo:
+- Paula Rafaela Paes de Vasconcelos
+- Leonardo Carvalho Bondia Martins
+- Fernando dos Santos Mendes
+- Yasmim Lazarim Gomes
 
 ## RESUMO  
 Este projeto apresenta o desenvolvimento de uma **prova de conceito (POC)** voltada para o gerenciamento de cadastros em uma universidade, com foco em **Alunos, Professores e um Admin** responsável pelo acesso. O sistema inclui modelagem UML e um protótipo funcional que implementa login de administrador, cadastro, listagem, edição e exclusão de registros.  
@@ -13,9 +18,9 @@ A aplicação foi desenvolvida em **PHP (backend)**, **MariaDB (banco de dados)*
   
 
 ## INTRODUÇÃO  
-O objetivo deste projeto é desenvolver uma **prova de conceito (POC)** de um sistema para gerenciamento de cadastros em uma universidade, com foco em **Alunos, Professores e um Admin** responsável pelo acesso.  
+O objetivo deste projeto é desenvolver uma **prova de conceito (POC)** de um sistema para gerenciamento de cadastros em uma universidade, com foco em **Alunos, Professores e Administardores** responsável pelo acesso.  
 
-O sistema permite **login de administrador**, além de **cadastro, listagem, edição e exclusão** de registros de alunos e professores.  
+O sistema permite **login de administrador**, além de **cadastro** de alunos e professores.  
 
 A modelagem foi realizada utilizando **UML (Unified Modeling Language)** para representar casos de uso e classes, enquanto a implementação prática foi desenvolvida em **PHP (backend)**, **MariaDB (banco de dados)** e **HTML/CSS/JavaScript (frontend)**, organizados com **Docker Compose**.
   
@@ -36,8 +41,8 @@ O sistema foi desenvolvido utilizando **PHP (backend)**, **MariaDB (banco de dad
 As principais entidades implementadas no sistema são:  
 
 - **Admin**: responsável pelo acesso e autenticação no sistema.  
-- **Aluno**: permite o cadastro, listagem, edição e exclusão de registros de estudantes.  
-- **Professor**: permite o cadastro, listagem, edição e exclusão de registros de professores.  
+- **Aluno**: permite o cadastro de estudantes.  
+- **Professor**: permite o cadastro de professores.  
 
 O backend expõe uma **API REST** que trata as operações de CRUD, aplicando validações de **CPF** e **email**. O frontend consome essa API para interação do usuário.  
 
@@ -100,8 +105,7 @@ O sistema tem como objetivo centralizar e organizar o **cadastro de alunos e pro
 
 **Funcionalidades implementadas:**  
 - Login de administrador.  
-- Cadastro, listagem, edição e exclusão de alunos.  
-- Cadastro, listagem, edição e exclusão de professores.  
+- Cadastro de alunos e professores.
 
 **Problemas resolvidos:**  
 
@@ -112,8 +116,7 @@ O sistema tem como objetivo centralizar e organizar o **cadastro de alunos e pro
 **Funcionalidades:**  
 
 - Login de administrador.  
-- Cadastro, listagem, edição e exclusão de alunos.  
-- Cadastro, listagem, edição e exclusão de professores.  
+- Cadastro de alunos e professores.
 - Validação de CPF e email para garantir integridade dos dados.  
 - Interface simples e intuitiva para o administrador.  
 
@@ -121,17 +124,16 @@ O sistema tem como objetivo centralizar e organizar o **cadastro de alunos e pro
 
 ### Personas  
 
-#### Administradora — Ana Clara, 32 anos  
-- **Ocupação:** Assistente Administrativa  
+#### Administradora — Ana Clara
 - **Necessidades:** Agilidade e confiabilidade nos cadastros de alunos e professores.  
 - **Desafios:** Evitar inconsistências e retrabalho.  
 - **Como o sistema ajuda:** Oferece validação automática e uma interface intuitiva que reduz erros.  
 
 #### Professor — José Almeida, 63 anos  
 - **Ocupação:** Professor de TI  
-- **Necessidades:** Ter seus dados cadastrados corretamente e atualizados de forma simples.  
+- **Necessidades:** Ter seus dados cadastrados corretamente..  
 - **Desafios:** Depender de processos administrativos lentos.  
-- **Como o sistema ajuda:** Permite que a administração atualize os dados de forma rápida e segura, garantindo integridade das informações.  
+- **Como o sistema ajuda:** Permite que a administração cadastre os dados de forma rápida e segura, garantindo integridade das informações.  
 
 ---
 
@@ -139,13 +141,13 @@ O sistema tem como objetivo centralizar e organizar o **cadastro de alunos e pro
 
 #### Ana Clara (Administradora)  
 
-| Etapa               | Ação                           | Ponto de Contato      | Dificuldades             |
-|---------------------|--------------------------------|-----------------------|--------------------------|
+| Etapa               | Ação                           | Ponto de Contato      | Dificuldades              |
+|---------------------|--------------------------------|-----------------------|---------------------------|
 | Login               | Acessa o sistema com credenciais | Tela de login        | Esquecimento de senha    |
-| Cadastro            | Insere dados de aluno/professor | Formulário de cadastro | Erros de preenchimento   |
+| Cadastro            | Insere dados de aluno/professor | Formulário de cadastro | Erros de preenchimento  |
 | Validação           | Sistema valida CPF e email      | Tela de feedback      | Dados inválidos          |
 | Confirmação         | Recebe mensagem de sucesso      | Tela de confirmação   | -                        |
-| Gerenciamento       | Lista, edita ou exclui registros| Painel administrativo | Atualização incompleta   |
+| Gerenciamento       | Cadastramento                   | Painel administrativo | Atualização incompleta   |
 
 #### José Almeida (Professor)  
 
@@ -153,7 +155,6 @@ O sistema tem como objetivo centralizar e organizar o **cadastro de alunos e pro
 |---------------------|--------------------------------|-----------------------|--------------------------|
 | Solicitar Cadastro  | Informa dados à administração  | Atendimento           | Informações incorretas   |
 | Conferência         | Recebe confirmação             | E-mail                | Atraso no retorno        |
-| Correções           | Solicita ajustes, se necessário| Atendimento           | Comunicação falha        |
 | Atualização         | Dados atualizados no sistema   | Sistema               | -                        |
 
  
